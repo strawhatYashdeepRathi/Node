@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>My First express app</title>
+        <style>
+            .btn{
+                padding: 10px;
+                color: black;
+                background-color: whitesmoke;
+            }
+            a{
+                text-decoration: none;
+                color: black;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <% users.forEach(user =>{%>
+            <div class="container">
+                <h3><%= user.name %></h3> 
+                <p><%= user.email %></p>
+            </div>
+            <%})%>
+        </div>
+        <div>
+        <button class="btn"><a href="/form">To Form Page</a></button></div>
+    </body>
+</html>
