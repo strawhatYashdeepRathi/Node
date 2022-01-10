@@ -1,13 +1,12 @@
 function getNameFromCommandLine() {
     // Write you code here, name should be taken as args in process.argv
-    const name = process.argv[2];
-    return name;
+
+    return process.argv[process.argv.length-1];
 }
 
 function getNameFromEnv() {
     // Write your code here
-    process.env.name_env = "name_env"
-    return process.env.name_env
+    return process.env.name
 }
 
 function getNameFromReadLine() {
@@ -17,10 +16,9 @@ function getNameFromReadLine() {
         input:process.stdin,
         output:process.stdout
     });
-    rl.question('Whats ur name ?', (ans)=>{
-        let x = ans;
+    rl.question('Whats ur name ?', (name)=>{
+        console.log(name)
     })
-    return x;
 }
 
 module.exports = {
