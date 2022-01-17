@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>My First db connection express app</title>
+        <style>
+            .btn{
+                padding: 10px;
+                color: black;
+                background-color: whitesmoke;
+            }
+            a{
+                text-decoration: none;
+                color: black;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>
+            <% data.forEach(user =>{%>
+            <div>
+                <% if(user.promoted === null) {%>
+                    <div>
+                        <h3>
+                            <%= user.name %>
+                        </h3>
+                        <p>
+                            <%= user.email %>
+                        </p>
+                    </div>
+                    <%}
+                    else if(user.promoted ===False) {%>
+                        <div>
+                            <h3>
+                                <%= user.name %>
+                            </h3>
+                            <p>
+                                <%= user.email %>
+                            </p>
+                        </div>
+                        <%}
+                        else if(user.promoted ===True) {%>
+                            <div>
+                                <h3>
+                                    <%= user.name %>
+                                </h3>
+                                <p>
+                                    <%= user.email %>
+                                </p>
+                            </div>
+                            <%}%>
+                            <form method="POST" action="/users/<%= user._id %>?_method=PUT">
+                                <button id="edit-<%= user.name %>" type="submit">Promote / Demote</button>
+                            </form>
+                            <form method="POST" action="/users/<%= user._id %>?_method=DELETE">
+                                <button id="delete-<%= user.name %>">Delete</button>
+                            </form>
+                        </div>
+                            <%})%>
+            
+        </div>
+        <button class="btn"><a href="/form">To Form Page</a></button>
+    </body>
+</html>

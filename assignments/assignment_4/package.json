@@ -1,0 +1,21 @@
+{
+  "name": "dbconnection",
+  "version": "1.0.0",
+  "description": "Db connection using Express",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yashdeep",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "faker": "^5.5.3",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.1.6",
+    "nodemon": "^2.0.15"
+  }
+}
